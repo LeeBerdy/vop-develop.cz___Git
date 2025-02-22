@@ -1,0 +1,225 @@
+@keyframes Background-breath {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media screen and (max-width:667px) {
+
+    @keyframes Background-breath {
+        0% {
+            transform: scale(0.5);
+        }
+    
+        50% {
+            transform: scale(1);
+        }
+    
+        100% {
+            transform: scale(0.5);
+        }
+    }
+}
+
+@media screen and (max-width:415px) {
+
+    @keyframes Background-breath {
+        0% {
+            transform: scale(0.3);
+        }
+    
+        50% {
+            transform: scale(0.7);
+        }
+    
+        100% {
+            transform: scale(0.3);
+        }
+    }
+}
+
+@font-face {
+    font-family: 'Numans';
+    src:url(Numans-Regular.ttf);
+}
+
+html {  
+    font-family: 'Numans', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background: #000000;
+}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.content {
+    width:auto;
+    height:100vh;
+    display:grid;
+    grid-template-rows: 1fr 1fr;
+    position: relative;
+}
+
+.content::before {
+    content: "";
+    width:500px;
+    height:500px;
+    background: rgb(124, 124, 124);
+    border-radius: 50%;
+    filter: blur(200px);
+    position: absolute;
+    bottom:-10%;
+    left:-10%;
+    animation: Background-breath;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    z-index: 50;
+}
+
+.content::after {
+    content: "";
+    width:500px;
+    height:500px;
+    background: rgb(124, 124, 124);
+    border-radius: 50%;
+    filter: blur(200px);
+    position: absolute;
+    top:-10%;
+    right:-10%;
+    animation: Background-breath;
+    animation-duration: 10s;
+    animation-delay: -2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    z-index: 50;
+}
+
+.logo {
+    margin:auto;
+    margin-top:-1%;
+    transform: scale(0.5);
+    position: relative;
+    z-index: 1000;
+}
+
+.Texts {
+    margin:auto;
+    width:100%;
+    margin-bottom:1%;
+    position: relative;
+    z-index: 100;
+    text-shadow: 1px 1px 20px black;
+}
+
+.text h2, h3{
+    color:white;
+    font-weight: 100;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.Thank-you {
+    margin-right:10%;
+    margin-bottom:50px;
+}
+
+.We-will {
+    margin-left:5%;
+}
+
+.Back h3{
+    margin-top:100px;
+    font-size: 1rem; 
+    cursor: pointer;
+}
+
+.Back a {
+    text-decoration: none;
+}
+
+span {
+    font-size: 2.5rem;
+}
+
+@media screen and (max-width:667px) {
+    .content::before {
+        bottom:-20%;
+        left:-30%;
+    }
+    
+    .content::after {
+        top:-20%;
+        right:-30%;
+}
+}
+
+@media screen and (max-width:556px) {
+
+    .text h2, h3{
+        font-size: 1.1rem;
+    }
+
+    span {
+        font-size: 2.1rem;
+    }
+
+    .Thank-you {
+        margin-bottom:20px;
+    }
+}
+
+@media screen and (max-width:415px) {
+
+    .text h2, h3{
+        font-size: 0.8rem;
+    }
+
+    span {
+        font-size: 1.8rem;
+    }
+
+    .Thank-you {
+        margin-bottom:10px;
+    }
+
+    .content::before {
+        bottom:-30%;
+        left:-50%;
+    }
+    
+    .content::after {
+        top:-30%;
+        right:-50%;
+}
+}
+
+@media screen and (max-width:350px) {
+
+    .text h2, h3{
+        font-size: 0.7rem;
+    }
+
+    span {
+        font-size: 1.7rem;
+    }
+
+    .Thank-you {
+        margin-bottom:8px;
+    }
+}
